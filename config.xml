@@ -7,10 +7,14 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="*" subdomains="true"  />
     <preference name="orientation" value="portrait" />
   	<preference name="target-device" value="universal" />
   	<preference name="fullscreen" value="false" />
     <preference name="android-targetSdkVersion" value="28" />
+    <preference name="splash-screen-duration" value="0" />
     <icon src="Logo.png" />
+    <allow-navigation href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
 </widget>
