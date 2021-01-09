@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+	<title></title>
+	<style>
+		body {
+			background-color: #232323;
+			background-image: url('https://www.transparenttextures.com/patterns/crissxcross.png');
+			background-size: 20vh;
+		}
+		.Pieces {
+			width: 20vh;
+			height: 20vh;
+			/*background-color: white;*/
+			margin: 10vh;
+			border-radius: 1vh;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			filter: contrast(80%);
+			cursor: pointer;
+		}
+		#Piece_2 {
+			color: white;
+			font-size: 4vh;
+			font-family: 'Playfair Display', serif;
+			line-height: 5vh;
+		}
+		#Back {
+			position: absolute;
+			width: 5vh;
+			height: 5vh;
+			background-color: white;
+			filter: contrast(70%);
+			margin-top: -9vh;
+			border-radius: 100px;
+			background-image: url("Back.png");
+			background-size: 3vh;
+			background-position: center;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body onclick="Random();">
+	<center>
+		<div id="Back" onclick="Back();"></div>
+		<div id="Piece_1" class="Pieces"></div>
+		<div id="Piece_2" class="Pieces">Tap to generate pieces</div>
+		<div id="Piece_3" class="Pieces"></div>
+	</center>
+
+	<script>
+		
+		var pieces = ["b_bishop_2x_ns", "b_king_2x_ns", "b_knight_2x_ns", "b_pawn_2x_ns", "b_queen_2x_ns", "b_rook_2x_ns"];
+		var piece1;
+		var piece2;
+		var piece3;
+
+		Random();
+
+		function Random() {
+			piece1 = pieces[Math.floor(Math.random() * pieces.length)];
+			document.getElementById("Piece_1").style.backgroundImage = "url('ChessPieces/" + piece1 + ".png')";
+			document.getElementById("Piece_2").innerHTML = "";
+			piece2 = pieces[Math.floor(Math.random() * pieces.length)];
+			document.getElementById("Piece_2").style.backgroundImage = "url('ChessPieces/" + piece2 + ".png')";
+			piece3 = pieces[Math.floor(Math.random() * pieces.length)];
+			document.getElementById("Piece_3").style.backgroundImage = "url('ChessPieces/" + piece3 + ".png')";
+		}
+
+		function Back() {
+			location.replace(
+		'index.html');
+		}
+	</script>
+</body>
+</html>
